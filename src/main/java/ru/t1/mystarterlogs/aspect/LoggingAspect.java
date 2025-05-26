@@ -29,12 +29,8 @@ public class LoggingAspect {
         this.properties = properties;
     }
 
-    @Pointcut("@annotation(ru.t1.mystarterlogs.annotation.Loggable)")
+    @Pointcut("annotation(Loggable)")
     public void methodsAnnotatedWithLoggable() {}
-
-
-    @Pointcut("@annotation(ru.t1.mystarterlogs.annotation.CustomTimeTracking)")
-    public void methodsAnnotatedWithCustomTimeTracking() {}
 
 
     @Before("methodsAnnotatedWithLoggable()")

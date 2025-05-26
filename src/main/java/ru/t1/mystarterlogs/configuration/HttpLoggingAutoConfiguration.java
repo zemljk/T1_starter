@@ -16,7 +16,7 @@ public class HttpLoggingAutoConfiguration {
     public HttpLoggingAutoConfiguration(HttpLoggingProperties httpLoggingProperties) {
         this.httpLoggingProperties = httpLoggingProperties;
     }
-
+    @Bean
     @ConditionalOnProperty(name = "http.logging.enable", havingValue = "true", matchIfMissing = true)
     public LoggingAspect httpLoggingAspect() {
         return new LoggingAspect(httpLoggingProperties);
